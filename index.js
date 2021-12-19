@@ -101,9 +101,9 @@ function clearForm() {
 
 function bookLibraryStyle() {
 bookLibrary.style.display = "flex";
-bookLibrary.style.maxWidth = "80%";
 bookLibrary.style.margin = "0 auto";
-bookLibrary.style.justifyContent = "space-between";
+bookLibrary.style.maxWidth = "80%";
+bookLibrary.style.justifyContent = "space-around";
 bookLibrary.style.flexWrap = "wrap";
 }
 bookLibraryStyle()
