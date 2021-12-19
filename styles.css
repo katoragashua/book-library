@@ -48,9 +48,10 @@ button {
     box-shadow: 3px 3px 2px;
     border: none;
     border-radius: 3px;
-    font-family:cursive; 
+    font-family:  cursive; 
+    /* font-weight: bolder; */
     background: lightgray;
-    color: rgba(0, 0, 0, 0.707);
+    color: black;
     padding: 0.3em 0.5em
 }
 
