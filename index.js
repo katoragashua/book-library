@@ -9,19 +9,19 @@ const formContainer = document.querySelector(".form-container");
 
 let myLibrary = [
     {
-        title: "Arson by the river", 
-    author: "Ichiro Ikigai",
-    pages: 306,
+        title: "The Monk Who Sold His Ferrari", 
+    author: "Robin Sharma",
+    pages: 198,
 },
  {
-        title: "The Hobbit ", 
-    author: "J. R. Tolkien",
-    pages: 609,
+        title: "Courage to be Disliked", 
+    author: "Fumitake Koga and Ichiro Kishimi",
+    pages: 329,
 },
  {
-        title: "Harry Potter", 
-    author: "J . K. Rowling",
-    pages: 702,
+        title: "No Excuses: The Power of Self-Discpline", 
+    author: "Brian Tracy",
+    pages: 332,
 }
 ];
 
@@ -117,6 +117,7 @@ function removeBook(item) {
         let bookIndex = myLibrary.indexOf(item);
         myLibrary.splice(bookIndex, 1);
         item.style.display = "none";
+        storeData();
 });
 }
 

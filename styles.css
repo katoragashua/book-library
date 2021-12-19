@@ -6,6 +6,19 @@ body {
     margin: 0;
     line-height: 1.6;
     font-size: 1rem;
+    font-family: cursive;
+    color: rgba(0, 0, 0, 0.707);
+    background-image: url(./john-fowler.jpg);
+    background-size: contain;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+button {
+    cursor: pointer;
 }
 
 .library {
@@ -17,17 +30,26 @@ body {
     display: flex;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    margin-right: 1em;
+    max-height: 500px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     max-width: 200px;
-    background-color: wheat;
+    background: linear-gradient( to right, orange, goldenrod);
     padding: 0.5rem;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .books button {
     margin-bottom: 1em;
-    align-self: baseline;
+    /* align-self: flex-start; */
+    box-shadow: 3px 3px 3px grey;
+    border: none;
+    border-radius: 3px;
+    font-family:cursive; 
+    background: cornsilk;
+    color: rgba(0, 0, 0, 0.707);
 }
 
 .add-card {
@@ -48,17 +70,23 @@ form button {
     margin-bottom: 1em;
     padding: 0.5em 0.5em 0.5em;
     border-radius: 4px;
-    border: none;
+    border: none; 
 }
 
 .form-container {
     display: none;
     text-align: center;
-    width: 30%;
-    max-width: 300px;
+    width: 95%;
+    max-width: 400px;
     margin: 0 auto;
     padding: 1rem;
     border-radius: 5px;
     margin-top: 3rem;
-    background-color: wheat;
+    background: linear-gradient( to right, orange, goldenrod);
+}
+
+form button {
+    box-shadow: 3px 3px 3px grey;
+    font-family:cursive;
+    color: rgba(0, 0, 0, 0.707);
 }
