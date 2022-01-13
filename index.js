@@ -6,20 +6,21 @@ const addBookBtn = document.getElementById("submit");
 const bookLibrary = document.getElementById("library");
 const addCard = document.getElementById("addCard");
 const formContainer = document.querySelector(".form-container");
+const bookArray = [];
 
 let myLibrary = [
     {
-        title: "The Monk Who Sold His Ferrari", 
+    title: "The Monk Who Sold His Ferrari", 
     author: "Robin Sharma",
     pages: 198,
 },
  {
-        title: "Courage to be Disliked", 
+    title: "Courage to be Disliked", 
     author: "Fumitake Koga and Ichiro Kishimi",
     pages: 329,
 },
  {
-        title: "No Excuses: The Power of Self-Discpline", 
+    title: "No Excuses: The Power of Self-Discpline", 
     author: "Brian Tracy",
     pages: 332,
 }
@@ -41,20 +42,20 @@ bookForm.addEventListener("submit", (event) => {
     formContainer.style.display = "none";
 
     let newBook = document.createElement('div');
-    // newBook.style.background = "azure";
     bookLibrary.appendChild(newBook);
     newBook.setAttribute('data-name',` ${book.title}`)
-    console.log(newBook. getAttribute('data-name'));
     newBook.classList.add("books");
     newBook.innerHTML = `
     <h1>${book.title}</h1>
     <p>${book.author}</p>
     <p>${book.pages}</p>
     `;
+    bookArray.push(newBook);
 
-    removeBook(newBook);
+    
     toggleReadStatus(newBook);
     storeData()
+    removeBook(newBook);
 
     clearForm()
     return myLibrary
@@ -72,31 +73,27 @@ function Book(title,
 
 function displayBook() {
     myLibrary.forEach(( item, index )=> {
-        console.log(item, index)
         let bookDiv = document.createElement('div');
         bookLibrary.appendChild(bookDiv);
         bookDiv.setAttribute("data-name", `${item.title}`);
-        console.log(bookDiv. getAttribute('data-name'));
         bookDiv.classList.add("books");
         bookDiv.innerHTML = `
         <h1>${item.title}</h1>
         <p>${item.author}</p>
         <p>${item.pages}</p>
         `;
-
-        removeBook(bookDiv)
-       toggleReadStatus(bookDiv)
-       storeData()
-    })
-   
+        bookArray.push(bookDiv);
+        
+       toggleReadStatus(bookDiv);
+       storeData();
+       removeBook(bookDiv);
+    });
 }
 
 displayBook() 
 
 function clearForm() {
-    author.value = "";
-    title.value = "";
-    pages.value = "";
+    bookForm.reset();
 }
 
 function bookLibraryStyle() {
@@ -114,10 +111,14 @@ function removeBook(item) {
     removeBtn.textContent = "Remove Book";
     item.appendChild(removeBtn);
     removeBtn.addEventListener("click", () => {
-        let bookIndex = myLibrary.indexOf(item);
-        myLibrary.splice(bookIndex, 1);
-        item.style.display = "none";
-        storeData();
+        let bookIndex = bookArray.indexOf(item);
+        if(bookIndex > -1) {
+            myLibrary.splice(bookIndex, 1);
+            bookArray.splice(bookIndex,1)
+            item.style.display = "none";
+            storeData();
+            return myLibrary;
+        }
 });
 }
 

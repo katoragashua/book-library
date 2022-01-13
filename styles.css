@@ -6,10 +6,14 @@ body {
     margin: 0;
     line-height: 1.6;
     font-size: 1rem;
-    font-family: cursive;
-    color: rgba(0, 0, 0, 0.707);
-    background-color: goldenrod;
-    background-image: url(./john-fowler.jpg);
+    font-family: 'orbitron', "ubuntu", sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    color: black;
+    font-weight: bold;
+    background: #CC95C0;  /* fallback for old   browsers */
+    background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     background-size: contain;
     background-blend-mode:multiply;
 }
@@ -38,9 +42,11 @@ button {
     justify-content: flex-end;
     width: 100%;
     max-width: 200px;
-    background: linear-gradient( to right, orange, goldenrod);
+    background-image: url(./john-fowler.jpg);
+    background-size: cover;
     padding: 0.5rem;
     box-shadow: 5px 5px  5px;
+    font-weight: bolder;
 }
 
 .books button {
@@ -49,10 +55,11 @@ button {
     border: none;
     border-radius: 3px;
     font-family:  cursive; 
-    /* font-weight: bolder; */
+    font-weight: bolder;
     background: lightgray;
     color: black;
-    padding: 0.3em 0.5em
+    padding: 0.3em 0.5em;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .add-card {
@@ -85,8 +92,8 @@ form button {
     padding: 1rem;
     border-radius: 5px;
     margin-top: 3rem;
-    background: linear-gradient( to right, orange, goldenrod);
-   box-shadow: 3px 3px 3px; 
+    background-image: url(./john-fowler.jpg);
+    box-shadow: 3px 3px 3px; 
 }
 
 form button {
@@ -94,4 +101,13 @@ form button {
     background-color: lightgray;
     font-family:cursive;
     color: rgba(0, 0, 0, 0.707);
+    font-family: 'Ubuntu', sans-serif;
 }
+
+/* font-family: 'Caveat', cursive;
+
+font-family: 'Orbitron', sans-serif;
+
+font-family: 'Press Start 2P', cursive;
+
+font-family: 'Ubuntu', sans-serif */
